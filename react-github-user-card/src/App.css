@@ -27,3 +27,9 @@
 .avatar {
   background-color: red;
 }
+
+.bio {
+  text-align: center;
+  font-style: italic;
+  padding: 10px 0;
+}

@@ -32,12 +32,12 @@ class UserCard extends React.Component {
           <Typography variant="body1" color="textSecondary" component="h3">
             Company: {this.props.user.company ? this.props.user.company : 'No Company provided'}
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
+          <Typography className='bio' variant="body2" color="textSecondary" component="p">
             {this.props.user.bio ? this.props.user.bio : 'This user has no bio'}
           </Typography>
         </CardContent>
-        <CardActions disableSpacing>
-          <a href={this.props.user.html_url}>Github Page </a>
+        <CardActions>
+          <a style={{marginLeft:'auto'}} href={this.props.user.html_url}>Github Page </a>
         </CardActions>
       </Card>
     );
