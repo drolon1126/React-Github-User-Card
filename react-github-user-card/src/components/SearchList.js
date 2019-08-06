@@ -2,17 +2,17 @@ import React from 'react';
 import UserCard from './UserCard';
 import Grid from '@material-ui/core/Grid';
 
-class FollowerList extends React.Component {
+class SearchList extends React.Component {
   constructor(){
     super();
   }
   render(){
     return(
       <Grid container spacing={3}>
-        {this.props.followerList.map(user=>{
+        {this.props.searchList.map(user=>{
           return(
             <Grid item>
-              <UserCard user={user} type='follower'/>
+              <UserCard user={user} type='search' selectUser={this.props.selectUser}/>
             </Grid>
           );
         })}
@@ -21,4 +21,4 @@ class FollowerList extends React.Component {
   }
 }
 
-export default FollowerList;
+export default SearchList;
