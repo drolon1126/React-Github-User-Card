@@ -12,7 +12,7 @@ class FollowerList extends React.Component {
         {this.props.followerList.map(user=>{
           return(
             <Grid item>
-              <UserCard user={user} />
+              <UserCard user={user} follower={true}/>
             </Grid>
           );
         })}

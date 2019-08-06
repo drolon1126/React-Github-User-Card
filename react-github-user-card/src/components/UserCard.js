@@ -13,17 +13,13 @@ class UserCard extends React.Component {
 
   }
   render(){
-    return(
-      <Card className='card'>
-        <CardHeader
-          avatar={
-            <Avatar aria-label="avatar" className='avatar' src={this.props.user.avatar_url}/>
-          }
-          title={this.props.user.name}
-          subheader={this.props.user.login}
-        />
+    var cardContent;
+    if(this.props.follower){
+      cardContent = <></>;
+    } else{
+      cardContent = 
         <CardContent>
-        <Typography variant="body1" color="textSecondary" component="h3">
+          <Typography variant="body1" color="textSecondary" component="h3">
             Email: {this.props.user.email ? this.props.user.email : 'No email provided'}
           </Typography>
           <Typography variant="body1" color="textSecondary" component="h3">
@@ -36,6 +32,17 @@ class UserCard extends React.Component {
             {this.props.user.bio ? this.props.user.bio : 'This user has no bio'}
           </Typography>
         </CardContent>
+    }
+    return(
+      <Card className='card'>
+        <CardHeader
+          avatar={
+            <Avatar aria-label="avatar" className='avatar' src={this.props.user.avatar_url}/>
+          }
+          title={this.props.user.name}
+          subheader={this.props.user.login}
+        />
+        {cardContent}
         <CardActions>
           <a style={{marginLeft:'auto'}} href={this.props.user.html_url}>Github Page </a>
         </CardActions>
