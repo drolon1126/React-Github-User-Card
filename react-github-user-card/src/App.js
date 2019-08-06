@@ -17,7 +17,7 @@ class App extends React.Component {
       .then(user=>this.setState({userData: user}))
       .catch(err => console.log('oops: ', err));
 
-    fetch(`https://api.github.com/users/${this.state.userData.login}/followers`)
+    fetch(`https://api.github.com/users/drolon1126/followers`)
       .then(res=>res.json())
       .then(followList=>this.setState({followerList: followList}))
       .catch(err => console.log('oops: ', err));
